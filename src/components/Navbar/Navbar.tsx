@@ -1,5 +1,6 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar, Box, Drawer, IconButton, Toolbar, Typography } from "@mui/material"
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useState } from 'react';
 import NavlinkDrawer from './NavlinkDrawer';
 
@@ -8,25 +9,22 @@ const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="warning">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            FastEat
-          </Typography>
-          <IconButton aria-label="delete" size="small" onClick={() => setOpen(true)}>
-            <MenuIcon  fontSize="medium" color='action' />
-          </IconButton>         
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }} gap={1}>
+            <MenuBookIcon />
+            <Typography variant="h6" fontWeight={"bold"} component="div" sx={{ flexGrow: 1 }}>
+              FastRecipes
+            </Typography>
+          </Box>
+          <Box>
+            <IconButton size="large" onClick={() => setOpen(true)}>
+              <MenuIcon  color={'action'} fontSize="medium" />
+            </IconButton>         
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer open={open} anchor='right' onClose={() => setOpen(false)}>
-        <NavlinkDrawer setOpen={setOpen} />
+        <NavlinkDrawer />
       </Drawer>
     </Box>
   )

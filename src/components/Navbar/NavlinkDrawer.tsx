@@ -1,10 +1,6 @@
 import { Box } from "@mui/material"
 
-interface Props {
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-const NavlinkDrawer: React.FC<Props> = (setOpen) => {
+const NavlinkDrawer = () => {
   return (
     <Box sx={{ width: 250 }}>
       
