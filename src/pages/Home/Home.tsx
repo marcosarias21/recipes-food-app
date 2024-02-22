@@ -4,6 +4,7 @@ import { Navbar } from "../../components/Navbar"
 import { CategoriesCard } from "../../components/CategoriesCard"
 import { type CategorieList } from "../../types/types.d"
 import useFetch from "../../hooks/useFetch"
+import { Container, Grid } from "@mui/material"
 
 const Home = () => {
   const [categories, setCategories] = useState<CategorieList[]>([])
@@ -17,9 +18,13 @@ const Home = () => {
     <>
     <Navbar />
     <Hero />
-    {
-      categories?.map(categorie => <CategoriesCard {...categorie} />)
-    }    
+    <Container disableGutters={true} maxWidth={"xl"}>
+      <Grid container spacing={2} gap={2} marginTop={20} justifyContent={"center"}>
+        {
+          categories?.map(categorie => <CategoriesCard {...categorie} />)
+        }    
+      </Grid>      
+    </Container>
     </>
   )
 }
