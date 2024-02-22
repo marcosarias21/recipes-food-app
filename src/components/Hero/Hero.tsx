@@ -1,4 +1,4 @@
-import { Box, Button, FormControl, InputBase, OutlinedInput, Paper, Typography } from "@mui/material"
+import { Box, Button, InputBase, Paper, Typography } from "@mui/material"
 import image from '../../assets/images/header_image.jpg'
 import { Search } from "@mui/icons-material"
 
@@ -14,9 +14,9 @@ const Hero = () => {
             <Search />
           </Button>
         </Box>
-        <Box marginTop={5}>
-          <Typography letterSpacing={1} textAlign={"center"} color={"#fff"} variant={"h4"} fontWeight={"bold"}>What are your favorite cuisines?</Typography>
-          <Typography mt={3} variant={"body1"} textAlign={"center"} color={"#fff"}>PERSONALIZE YOUR EXPERIENCE</Typography>
+        <Box  display={"block"} justifyContent={"center"} alignItems={"center"} marginTop={5}>
+          <Typography letterSpacing={1} color={"#fff"} variant={"h4"} fontWeight={"bold"}>What are your favorite cuisines?</Typography>
+          <Typography mt={3} variant={"body1"} color={"#fff"}>PERSONALIZE YOUR EXPERIENCE</Typography>
         </Box>
       </Box>
     </Box>
