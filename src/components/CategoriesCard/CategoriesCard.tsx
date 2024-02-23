@@ -1,16 +1,18 @@
 import { Box, Card, CardActionArea, CardMedia, Chip, Grid, Typography } from "@mui/material"
 import { type CategorieList } from "../../types/types.d"
 import useColor from "../../hooks/useColor"
+import { useMealBook } from "../../store/mealStore"
 
 const CategoriesCard = ({ strCategory, strCategoryDescription, strCategoryThumb }: CategorieList) => {
   const color = useColor(strCategory)
+  const { setDescription } = useMealBook()
   return (
     <Grid xs={2} >
       <Card>
-        <CardActionArea sx={{ transition: '0.2s', ':hover': { transform: 'scale(1.05)' } }}>
+        <CardActionArea sx={{ transition: '0.2s', ':hover': { transform: 'scale(1.05)' } }} onClick={() => setDescription(strCategoryDescription)}>
           <CardMedia
             component="img"
-            height="194"
+            height={"100%"}
             image={`${strCategoryThumb}`}
             alt={`${strCategoryThumb}`}
             sx={{ position: 'relative' }}
