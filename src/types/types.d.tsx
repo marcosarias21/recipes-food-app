@@ -4,3 +4,10 @@ export interface CategorieList{
   strCategoryDescription: string
   strCategoryThumb: string
 }
+
+
+export interface Meal{
+  idMeal: string
+  strMeal: string
+  strMealThumb: string
+}
