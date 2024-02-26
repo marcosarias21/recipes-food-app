@@ -8,6 +8,11 @@ const useFetch = (url: string) => {
   })
 
   const getDataFetch = async (): Promise<void> => {
+    setData({
+      data: null,
+      loading: true,
+    })
+
     const resp = await axios.get(url)
     console.log(resp)
     setData({
