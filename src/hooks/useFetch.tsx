@@ -12,7 +12,6 @@ const useFetch = (url: string) => {
       data: null,
       loading: true,
     })
-
     const resp = await axios.get(url)
     console.log(resp)
     setData({
