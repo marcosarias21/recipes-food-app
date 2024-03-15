@@ -1,11 +1,15 @@
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Box, Drawer, IconButton, Toolbar, Typography } from "@mui/material"
+import { AppBar, Box, Button, Drawer, IconButton, Toolbar, Typography } from "@mui/material"
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useState } from 'react';
 import NavlinkDrawer from './NavlinkDrawer';
+import { useMealBook } from '../../store/mealStore';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const { isOpenMeal, setOpenMeal } = useMealBook()
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="warning">
@@ -17,9 +21,15 @@ const Navbar = () => {
             </Typography>
           </Box>
           <Box>
-            <IconButton size="large" onClick={() => setOpen(true)}>
-              <MenuIcon  color={'action'} fontSize="medium" />
-            </IconButton>         
+            {isOpenMeal ? 
+            <Link to={'/'} onClick={setOpenMeal}>
+              <IconButton>
+                <ArrowBackIcon />
+              </IconButton>
+            </Link> 
+            : <IconButton size="large" onClick={() => setOpen(true)}>
+                <MenuIcon  color={'action'} fontSize="medium" />
+              </IconButton>}
           </Box>
         </Toolbar>
       </AppBar>

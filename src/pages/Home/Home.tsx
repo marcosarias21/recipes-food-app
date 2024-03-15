@@ -8,6 +8,7 @@ import { Container, Grid, Typography } from "@mui/material"
 import { InformationMeal } from "../../components/InformationMeal"
 import { Meals } from "../Meals"
 import { useMealBook } from "../../store/mealStore"
+import { DetailMeal } from "../DetailMeal"
 
 const Home = () => {
   const [categories, setCategories] = useState<CategorieList[]>([])
@@ -24,7 +25,7 @@ const Home = () => {
     <InformationMeal />
     <Container disableGutters={true} maxWidth={"xl"} sx={{ my: 10 }}>
       {
-        category &&  <Meals />
+        category && <Meals />
       }
     </Container>
     <Container disableGutters={true} maxWidth={"xl"}>
@@ -33,7 +34,7 @@ const Home = () => {
         {
           categories?.map(categorie => <CategoriesCard {...categorie} />)
         }    
-      </Grid>      
+      </Grid>  
     </Container>
     </>
   )

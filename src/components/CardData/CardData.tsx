@@ -9,22 +9,20 @@ interface Props {
 
 const CardData = ({ category, image, handleData, color }: Props) => {
   return (
-    <Grid xs={2} >
-      <Card>
-        <CardActionArea sx={{ transition: '0.2s', ':hover': { transform: 'scale(1.05)' } }} onClick={handleData}>
-          <CardMedia
-            component="img"
-            height={"100%"}
-            image={`${image}`}
-            alt={`${image}`}
-            sx={{ position: 'relative' }}
-          />
-          <Box sx={{ position: 'absolute', top: 5, right: 5 }} >
-            <Chip sx={{ borderRadius: 2, padding: '1px', fontWeight: 'bold' }} label={category} variant="filled" color={`${color}`} />
-          </Box>
-        </CardActionArea>
-      </Card>
-    </Grid>
+    <Card onClick={handleData}>
+      <CardActionArea sx={{ transition: '0.2s', ':hover': { transform: 'scale(1.05)' } }}>
+        <CardMedia
+          component="img"
+          height={"100%"}
+          image={`${image}`}
+          alt={`${image}`}
+          sx={{ position: 'relative' }}
+        />
+        <Box sx={{ position: 'absolute', top: 5, right: 5 }} >
+          <Chip sx={{ borderRadius: 2, padding: '1px', fontWeight: 'bold' }} label={category} variant="filled" color={`${color}`} />
+        </Box>
+      </CardActionArea>
+    </Card>
   )
 }
 
